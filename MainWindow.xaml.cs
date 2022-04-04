@@ -20,9 +20,20 @@ namespace NET_INIS4_PR2._2_z4
     /// </summary>
     public partial class MainWindow : Window
     {
+        Model model = new Model();
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = model;
+        }
+
+        private void Szczegóły(object sender, RoutedEventArgs e)
+        {
+            FrameworkElement parent = (FrameworkElement) ((FrameworkElement) sender).Parent;
+            ListBox lista = (ListBox) parent.FindName("ListaDoWybrania");
+            Osoba wybrany = (Osoba) lista.SelectedItem;
+            if(wybrany != null)
+                model.OtwórzSzczegóły(wybrany);
         }
     }
 }
