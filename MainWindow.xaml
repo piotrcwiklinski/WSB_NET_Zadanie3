@@ -9,6 +9,7 @@
         Title="MainWindow"
         Height="700"
         Width="500"
+        FontSize="24"
         >
     <Grid>
         <Grid.RowDefinitions>
@@ -17,10 +18,18 @@
         </Grid.RowDefinitions>
 
         <ListBox
-            ItemsSource="{Binding }"
-            />
+            Name="ListaDoWybrania"
+            ItemsSource="{Binding Lista}"
+            >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding FormatListy}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button
             Grid.Row="1"
+            Click="Szczegóły"
             >Szczegóły</Button>
     </Grid>
 </Window>
