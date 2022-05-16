@@ -35,5 +35,9 @@ namespace NET_INIS4_PR2._2_z4
             if(wybrany != null)
                 model.OtwórzSzczegóły(wybrany);
         }
+        private void DodajNowy(object sender, RoutedEventArgs e)
+        {
+            model.DodajNowy();
+        }
     }
 }

@@ -8,7 +8,8 @@ namespace NET_INIS4_PR2._2_z4
 {
     class Model
     {
-        public IEnumerable<Osoba> Lista { get; set; } = new LinkedList<Osoba>(new Osoba[] {
+        /*Prawdopodobnie brakuje jawnego pola z listą, właściwości jawnie zaimplementowanej i notyfikacji o zmianie*/
+        public LinkedList<Osoba> Lista { get; set; } = new LinkedList<Osoba>(new Osoba[] {
             new Osoba() {
                 Imię = "Adam",
                 Nazwisko = "Wiśniewski",
@@ -35,6 +36,14 @@ namespace NET_INIS4_PR2._2_z4
         {
             Szczegóły szczegóły = new Szczegóły(wybrany);
             szczegóły.Show();
+        }
+        internal void DodajNowy()
+        {
+            Osoba nowa = new Osoba();
+            Lista.AddLast(nowa);
+            Szczegóły szczegóły = new Szczegóły(nowa);
+            szczegóły.Show();
+            /*aktualizowanie widoku samej listy*/
         }
     }
 }

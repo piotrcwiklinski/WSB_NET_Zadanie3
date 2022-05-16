@@ -15,6 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
         <ListBox
@@ -31,5 +32,9 @@
             Grid.Row="1"
             Click="Szczegóły"
             >Szczegóły</Button>
+        <Button
+            Grid.Row="2"
+            Click="DodajNowy"
+            >Dodaj Nowy</Button>
     </Grid>
 </Window>
