@@ -1,49 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NET_INIS4_PR2._2_z4
+namespace WSB_NET_Zadanie3
+
 {
     class Model
     {
-        /*Prawdopodobnie brakuje jawnego pola z listą, właściwości jawnie zaimplementowanej i notyfikacji o zmianie*/
-        public LinkedList<Osoba> Lista { get; set; } = new LinkedList<Osoba>(new Osoba[] {
-            new Osoba() {
-                Imię = "Adam",
-                Nazwisko = "Wiśniewski",
-                DataUrodzenia = DateTime.Parse("1.01.1990")
+        public ObservableCollection<Film> Lista { get; set; } = new ObservableCollection<Film>(new Film[] {
+            new Film() {
+                Tytul = "Killer",
+                Rezyser = "Machulski, J.",
+                Studio = "Canal+",
+                Nosnik = "VHS",
+                DataWydania = DateTime.Parse("17.11.1997")
             },
-            new Osoba() {
-                Imię = "Marian",
-                Nazwisko = "Dąbrowski",
-                DataUrodzenia = DateTime.Parse("2.02.2000")
+            new Film() {
+                Tytul = "Chłopaki nie Płaczą",
+                Rezyser = "Lubaszenko, O.",
+                Studio = "Studio BestFilm",
+                Nosnik = "CD-ROM",
+                DataWydania = DateTime.Parse("25.02.2000")
             },
-            new Osoba() {
-                Imię = "Julia",
-                Nazwisko = "Jabłońska",
-                DataUrodzenia = DateTime.Parse("3.03.2010")
+            new Film() {
+                Tytul = "Poranek Kojota",
+                Rezyser = "Lubaszenko, O.",
+                Studio = "Studio BestFilm",
+                Nosnik = "CD-ROM",
+                DataWydania = DateTime.Parse("24.08.2001")
             },
-            new Osoba() {
-                Imię = "Sylwia",
-                Nazwisko = "Sosnowska",
-                DataUrodzenia = DateTime.Parse("4.04.2020")
+            new Film() {
+                Tytul = "Nic Śmiesznego",
+                Rezyser = "Koterski, M.",
+                Studio= "Studio Filmowe Zebra",
+                Nosnik = "VHS",
+                DataWydania = DateTime.Parse("2.02.1996")
             },
         });
 
-        internal void OtwórzSzczegóły(Osoba wybrany)
+        internal void OtwórzSzczegóły(Film wybrany)
         {
             Szczegóły szczegóły = new Szczegóły(wybrany);
             szczegóły.Show();
         }
         internal void DodajNowy()
         {
-            Osoba nowa = new Osoba();
-            Lista.AddLast(nowa);
+            Film nowa = new Film();
+            Lista.Add(nowa);
             Szczegóły szczegóły = new Szczegóły(nowa);
             szczegóły.Show();
-            /*aktualizowanie widoku samej listy*/
         }
     }
 }

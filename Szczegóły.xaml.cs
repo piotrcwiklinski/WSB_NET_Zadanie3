@@ -12,18 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace NET_INIS4_PR2._2_z4
+namespace WSB_NET_Zadanie3
 {
     /// <summary>
     /// Logika interakcji dla klasy Szczegóły.xaml
     /// </summary>
     public partial class Szczegóły : Window
     {
-        Osoba osoba;
-        public Szczegóły(Osoba osoba)
+        Film film;
+        public Szczegóły(Film film)
         {
-            this.osoba = osoba;
-            DataContext = osoba;
+            this.film = film;
+            DataContext = film;
             InitializeComponent();
         }
 

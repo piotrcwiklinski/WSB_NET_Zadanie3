@@ -13,11 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NET_INIS4_PR2._2_z4
+namespace WSB_NET_Zadanie3
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         Model model = new Model();
@@ -31,7 +28,7 @@ namespace NET_INIS4_PR2._2_z4
         {
             FrameworkElement parent = (FrameworkElement) ((FrameworkElement) sender).Parent;
             ListBox lista = (ListBox) parent.FindName("ListaDoWybrania");
-            Osoba wybrany = (Osoba) lista.SelectedItem;
+            Film wybrany = (Film) lista.SelectedItem;
             if(wybrany != null)
                 model.OtwórzSzczegóły(wybrany);
         }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5132B0C4-18E0-4EED-A7A7-000AD6E1408F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>NET_INIS4_PR2._2_z4</RootNamespace>
-    <AssemblyName>NET INIS4_PR2.2 z4</AssemblyName>
+    <RootNamespace>WSB_NET_Zadanie3</RootNamespace>
+    <AssemblyName>WSB_NET_Zadanie3</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -77,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model.cs" />
-    <Compile Include="Osoba.cs" />
+    <Compile Include="Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
