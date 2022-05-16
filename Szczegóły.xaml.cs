@@ -33,7 +33,7 @@ namespace NET_INIS4_PR2._2_z4
         }
         private void EdytujWiek(object sender, RoutedEventArgs e)
         {
-
+            new EdycjaWieku(osoba).Show();
         }
     }
 }

@@ -19,8 +19,9 @@ namespace NET_INIS4_PR2._2_z4
     /// </summary>
     public partial class EdycjaWieku : Window
     {
-        public EdycjaWieku()
+        public EdycjaWieku(Osoba osoba)
         {
+            DataContext = osoba;
             InitializeComponent();
         }
     }

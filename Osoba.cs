@@ -13,22 +13,29 @@ namespace NET_INIS4_PR2._2_z4
         public event PropertyChangedEventHandler PropertyChanged;
         private readonly static Dictionary<string, string[]> relatedProperties = new Dictionary<string, string[]>()
         {
-            ["Imię"] = new string[] {"ImięNazwisko", "FormatListy" },
-            ["Nazwisko"] = new string[] {"ImięNazwisko", "FormatListy" },
-            ["Wiek"] = new string[] {"FormatListy"}
+            ["Imię"] = new string[] { "ImięNazwisko", "FormatListy" },
+            ["Nazwisko"] = new string[] { "ImięNazwisko", "FormatListy" },
+            ["DataUrodzenia"] = new string[] { "Wiek", "FormatListy" },
+            ["DataŚmierci"] = new string[] { "Wiek", "FormatListy" }
         };
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            foreach(string relatedProperty in relatedProperties[propertyName])
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(relatedProperty));
+            if(relatedProperties.ContainsKey(propertyName))
+                foreach(string relatedProperty in relatedProperties[propertyName])
+                    OnPropertyChanged(relatedProperty);
+            //śledzenie zapobiegające stack overflow?
         }
 
         static uint następneID = 0;
-        uint wiek = 0;
+        /*uint wiek = 0;*/
         string
             imię,
             nazwisko
+            ;
+        DateTime?
+            dataUrodzenia = null,
+            dataŚmierci = null
             ;
 
         public string Imię {
@@ -47,11 +54,37 @@ namespace NET_INIS4_PR2._2_z4
                 OnPropertyChanged();
             }
         }
-        public uint Wiek { 
-            get => wiek;
+        public string Wiek { 
+            get
+            {
+                if (dataUrodzenia != null)
+                {
+                    DateTime koniec;
+                    if (dataŚmierci != null)
+                        koniec = (DateTime)dataŚmierci;
+                    else
+                        koniec = DateTime.Now;
+                    return ((koniec - (DateTime)dataUrodzenia).Days / 365).ToString();
+                }
+                else
+                    return "BD";
+            }
+        }
+        public DateTime? DataUrodzenia
+        {
+            get => dataUrodzenia;
             set
             {
-                wiek = value;
+                dataUrodzenia = value;
+                OnPropertyChanged();
+            }
+        }
+        public DateTime? DataŚmierci
+        {
+            get => dataŚmierci;
+            set
+            {
+                dataŚmierci = value;
                 OnPropertyChanged();
             }
         }
