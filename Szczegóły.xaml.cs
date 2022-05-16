@@ -31,9 +31,5 @@ namespace NET_INIS4_PR2._2_z4
         {
             Close();
         }
-        private void EdytujWiek(object sender, RoutedEventArgs e)
-        {
-            new EdycjaWieku(osoba).Show();
-        }
     }
 }
