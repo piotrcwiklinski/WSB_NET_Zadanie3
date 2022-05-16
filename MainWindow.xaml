@@ -11,7 +11,7 @@
         Width="500"
         FontSize="24"
         >
-    <Grid>
+    <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="100"/>
