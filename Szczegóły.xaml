@@ -5,8 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NET_INIS4_PR2._2_z4"
         mc:Ignorable="d"
-        Title="Szczegóły" Height="450" Width="800">
-    <Grid>
+        Title="Szczegóły"
         
+        Height="450"
+        Width="500"
+        FontSize="24">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="1">Imię:</Label>
+        <TextBlock
+            Grid.Column="1"
+            Grid.Row="1"
+            Text="{Binding Imię}"
+            Style="{DynamicResource TextBlockStyle1}"
+            />
+        <TextBox
+            Grid.Column="2"
+            Grid.Row="1"
+            Text="{Binding Imię}"
+            />
+
+        <Label Grid.Row="2">Nazwisko:</Label>
+        <TextBlock
+            Grid.Column="1"
+            Grid.Row="2"
+            Text="{Binding Nazwisko}"
+            Style="{DynamicResource TextBlockStyle1}"
+            />
+        <TextBox
+            Grid.Column="2"
+            Grid.Row="2"
+            Text="{Binding Nazwisko}"
+            />
+
+        <Label Grid.Row="3">Wiek:</Label>
+        <TextBlock
+            Grid.Column="1"
+            Grid.Row="3"
+            Text="{Binding Wiek}"
+            Style="{DynamicResource TextBlockStyle1}"
+            />
+        <TextBox
+            Grid.Column="2"
+            Grid.Row="3"
+            Text="{Binding Wiek}"
+            />
+
+        <Label Grid.ColumnSpan="2"
+               Content="{Binding ImięNazwisko}"
+               />
+        <TextBlock
+            Grid.Column="2"
+            Grid.Row="0"
+            Text="{Binding FormatID}"
+            Style="{DynamicResource TextBlockStyle1}"
+            />
+
+        <Button
+            Grid.Column="2"
+            Grid.Row="4"
+            Click="Zamknij"
+            >OK</Button>
     </Grid>
 </Window>

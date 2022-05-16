@@ -58,5 +58,6 @@ namespace NET_INIS4_PR2._2_z4
         public string ImięNazwisko { get => $"{imię} {nazwisko}"; }
         public string FormatListy { get => $"{imię} {nazwisko}, {Wiek} lat(a)"; }
         public uint ID { get; } = następneID++;
+        public string FormatID { get => "ID: " + ID; }
     }
 }

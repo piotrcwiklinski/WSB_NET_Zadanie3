@@ -26,5 +26,10 @@ namespace NET_INIS4_PR2._2_z4
             DataContext = osoba;
             InitializeComponent();
         }
+
+        private void Zamknij(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
