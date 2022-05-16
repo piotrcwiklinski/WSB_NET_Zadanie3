@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace NET_INIS4_PR2._2_z4
 {
     /// <summary>
-    /// Logika interakcji dla klasy Szczegóły.xaml
+    /// Logika interakcji dla klasy EdycjaWieku.xaml
     /// </summary>
-    public partial class Szczegóły : Window
+    public partial class EdycjaWieku : Window
     {
-        Osoba osoba;
-        public Szczegóły(Osoba osoba)
+        public EdycjaWieku()
         {
-            this.osoba = osoba;
-            DataContext = osoba;
             InitializeComponent();
-        }
-
-        private void Zamknij(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-        private void EdytujWiek(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

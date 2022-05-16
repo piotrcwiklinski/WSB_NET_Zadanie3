@@ -24,6 +24,16 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <Label Grid.ColumnSpan="2"
+               Content="{Binding ImięNazwisko}"
+               />
+        <TextBlock
+            Grid.Column="2"
+            Grid.Row="0"
+            Text="{Binding FormatID}"
+            Style="{DynamicResource TextBlockStyle1}"
+            />
+
         <Label Grid.Row="1">Imię:</Label>
         <TextBlock
             Grid.Column="1"
@@ -57,21 +67,11 @@
             Text="{Binding Wiek}"
             Style="{DynamicResource TextBlockStyle1}"
             />
-        <TextBox
+        <Button
             Grid.Column="2"
             Grid.Row="3"
-            Text="{Binding Wiek}"
-            />
-
-        <Label Grid.ColumnSpan="2"
-               Content="{Binding ImięNazwisko}"
-               />
-        <TextBlock
-            Grid.Column="2"
-            Grid.Row="0"
-            Text="{Binding FormatID}"
-            Style="{DynamicResource TextBlockStyle1}"
-            />
+            Click="EdytujWiek"
+            >Edytuj</Button>
 
         <Button
             Grid.Column="2"
